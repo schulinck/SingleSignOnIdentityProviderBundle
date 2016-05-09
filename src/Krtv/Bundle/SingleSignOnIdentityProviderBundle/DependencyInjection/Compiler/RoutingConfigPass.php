@@ -18,7 +18,8 @@ class RoutingConfigPass implements CompilerPassInterface
     {
         $container->getDefinition('krtv_single_sign_on_identity_provider.routing.loader')
             ->replaceArgument(0, $container->getParameter('krtv_single_sign_on_identity_provider.host'))
-            ->replaceArgument(1, $container->getParameter('krtv_single_sign_on_identity_provider.login_path'))
-            ->replaceArgument(2, $container->getParameter('krtv_single_sign_on_identity_provider.logout_path'));
+            ->replaceArgument(1, $container->getParameter('krtv_single_sign_on_identity_provider.host_scheme'))
+            ->replaceArgument(2, $container->getParameter('krtv_single_sign_on_identity_provider.login_path'))
+            ->replaceArgument(3, $container->getParameter('krtv_single_sign_on_identity_provider.logout_path'));
     }
 }
