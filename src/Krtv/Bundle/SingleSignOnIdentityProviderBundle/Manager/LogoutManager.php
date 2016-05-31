@@ -68,7 +68,14 @@ class LogoutManager
         if ($nextService !== null) {
             $serviceManager = $this->serviceManager->getServiceManager($nextService);
 
-            return $serviceManager->getServiceLogoutUrl();
+            $logoutUrl = $serviceManager->getServiceLogoutUrl();
+            if ($logoutUrl == null) {
+                $this->addProcessedService($nextService);
+
+                return $this->getNextLogoutUrl();
+            }
+
+            return $logoutUrl;
         }
 
         return $this->router->generate('_security_logout');
