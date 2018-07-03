@@ -5,6 +5,8 @@
 
     <parameters>
         <parameter key="krtv_single_sign_on_identity_provider.security.firewall_id">main</parameter>
+
+        <parameter key="krtv_single_sign_on_identity_provider.http_utils.class">Krtv\Bundle\SingleSignOnIdentityProviderBundle\HttpUtils\HttpUtils</parameter>
     </parameters>
 
     <services>
