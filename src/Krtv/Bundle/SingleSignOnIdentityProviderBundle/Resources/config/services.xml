@@ -55,5 +55,14 @@
             <argument type="string">%krtv_single_sign_on_identity_provider.otp_parameter%</argument>
             <argument type="string">%krtv_single_sign_on_identity_provider.target_path_parameter%</argument>
         </service>
+
+        <service id="krtv_single_sign_on_identity_provider.http_utils"
+                 class="%krtv_single_sign_on_identity_provider.http_utils.class%"
+                 public="false"
+                 decorates="security.http_utils"
+                 decoration-inner-name="security.http_utils.inner">
+            <argument type="service" id="router" on-invalid="null" />
+            <argument type="service" id="router" on-invalid="null" />
+        </service>
     </services>
 </container>
