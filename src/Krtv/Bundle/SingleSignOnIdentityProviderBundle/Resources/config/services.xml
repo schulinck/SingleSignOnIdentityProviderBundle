@@ -18,7 +18,7 @@
             <argument/> <!-- sso logout path -->
         </service>
 
-        <service id="krtv_single_sign_on_identity_provider.security.authentication.otp_manager.orm" class="Krtv\SingleSignOn\Manager\ORM\OneTimePasswordManager">
+        <service id="krtv_single_sign_on_identity_provider.security.authentication.otp_manager.orm" class="Krtv\SingleSignOn\Manager\ORM\OneTimePasswordManager" public="true">
             <argument type="service" id="doctrine.orm.entity_manager"/>
             <argument type="string">Krtv\Bundle\SingleSignOnIdentityProviderBundle\Entity\OneTimePassword</argument>
         </service>
@@ -43,7 +43,7 @@
             <tag name="kernel.event_subscriber" />
         </service>
 
-        <service id="krtv_single_sign_on_identity_provider.security.authentication.encoder" class="Krtv\SingleSignOn\Encoder\OneTimePasswordEncoder">
+        <service id="krtv_single_sign_on_identity_provider.security.authentication.encoder" class="Krtv\SingleSignOn\Encoder\OneTimePasswordEncoder" public="true">
             <argument/> <!-- secret -->
         </service>
 
@@ -51,7 +51,7 @@
             <argument/> <!-- secret -->
         </service>
 
-        <service id="krtv_single_sign_on_identity_provider.security.http_utils" class="Krtv\Bundle\SingleSignOnIdentityProviderBundle\Security\Http\HttpUtils">
+        <service id="krtv_single_sign_on_identity_provider.security.http_utils" class="Krtv\Bundle\SingleSignOnIdentityProviderBundle\Security\Http\HttpUtils" public="true">
             <argument type="service" id="krtv_single_sign_on_identity_provider.uri_signer"/>
             <argument type="service" id="security.http_utils"/>
             <argument type="string">%krtv_single_sign_on_identity_provider.otp_parameter%</argument>
